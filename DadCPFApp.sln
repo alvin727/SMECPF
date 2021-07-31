@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DadCPFApp", "DadCPFApp\DadCPFApp.csproj", "{51733AF4-82B0-49B2-BE69-CBD00DD99820}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51733AF4-82B0-49B2-BE69-CBD00DD99820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51733AF4-82B0-49B2-BE69-CBD00DD99820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51733AF4-82B0-49B2-BE69-CBD00DD99820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51733AF4-82B0-49B2-BE69-CBD00DD99820}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDE514C9-A59A-4ACC-BC60-8B2D3AB15D5D}
+	EndGlobalSection
+EndGlobal
