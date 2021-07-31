@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="DadCPFApp.EmployeeAdmin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DadCPFApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="btnAddEmp" Click="btnAddEmp_Click" Command="{Binding AddEmployeeCommand}">Add Employee</Button>
+            <Button x:Name="btnDekEmp">Delete Employee</Button>
+        </StackPanel>
+        <StackPanel x:Name="DG">
+            <DataGrid x:Name="dgMain" 
+                      ItemsSource="{Binding Employees}" AutoGenerateColumns="False" 
+                      SelectedItem="{Binding MySelectedItem}" 
+                      SelectionMode="Single"
+                      >
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                <Setter Property="Background" Value="LightCyan" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn>
+                        <DataGridTextColumn.Header>
+                            <CheckBox></CheckBox>
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="SN" Binding="{Binding SN}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="I/C No" Binding="{Binding ICNo}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Employee Name" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Salary" Binding="{Binding DisplayWage, StringFormat={}{0:F2}}"
+                                        CellStyle="{StaticResource RightCellStyle}">
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="OT Pay" CellStyle="{StaticResource RightCellStyle}" >
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Employer CPF($)" Binding="{Binding EmployerCPF, StringFormat={}{0:F2}}"
+                                        CellStyle="{StaticResource Gray}">
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Employee CPF($)" Binding="{Binding EmployeeCPF, StringFormat={}{0:F2}}" 
+                                        CellStyle="{StaticResource RightCellStyle}" ></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel></StackPanel>
+        <StackPanel x:Name="Summary3">
+            <TextBlock>Total</TextBlock>
+            <ListView>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Last name">
+                        </GridViewColumn>
+                        <GridViewColumn Header="Total">
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

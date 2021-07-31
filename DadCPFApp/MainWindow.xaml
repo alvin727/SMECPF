@@ -1,0 +1,45 @@
+﻿<Window x:Class="DadCPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DadCPFApp"
+        mc:Ignorable="d"
+        Title="&lt;MainTitle&gt;" Height="1920" Width="1080" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <DockPanel>
+        
+        <StackPanel DockPanel.Dock="Left" x:Name="Navigation">
+            <Button x:Name="btnCPF" Click="btnCPF_Click">CPF Contribution</Button>
+            <Button x:Name="btnCompany" Click="btnCompany_Click">Company Admin</Button>
+            <Button x:Name="btnEmployee" Click="btnEmployee_Click">Employees Admin</Button>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Right" x:Name="Main">
+            <StackPanel x:Name="Header" Height="auto">
+                <Label>"Summary"</Label>
+            </StackPanel>
+            <StackPanel x:Name="DG" Height="90">
+                <DataGrid x:Name="dgMain">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="SN"></DataGridTextColumn>
+                        <DataGridTextColumn Header="I/C No"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Employee Name"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Ordinary Wage(S$)"></DataGridTextColumn>
+                        <DataGridTextColumn Header="O/T Wage(S$)"></DataGridTextColumn>
+                        <DataGridTextColumn Header="CPF To Be Paid(S$)"></DataGridTextColumn>
+                        <DataGridTextColumn Header="SDL To Be Paid(S$)"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Employer CPF(S$)"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Employee CPF(S$)"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Agency"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Agency Fund (S$)"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <StackPanel x:Name="EmpAdmin">
+                <local:EmployeeAdmin x:Name="empAdminPanel"></local:EmployeeAdmin>
+            </StackPanel>
+            <StackPanel x:Name="CoAdmin">
+                <local:CompanyAdmin x:Name="CoAdminPanel"></local:CompanyAdmin>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>
