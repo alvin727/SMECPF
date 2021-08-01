@@ -9,7 +9,8 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <Button x:Name="btnAddEmp" Click="btnAddEmp_Click" Command="{Binding AddEmployeeCommand}">Add Employee</Button>
-            <Button x:Name="btnDekEmp">Delete Employee</Button>
+            <Button x:Name="btnDekEmp" Command="{Binding DelEmployeeCommand}">Delete Employee</Button>
+            <Button x:Name="btlSaveEmp" Command="{Binding SaveEmployees}">Save Employees</Button>
         </StackPanel>
         <StackPanel x:Name="DG">
             <DataGrid x:Name="dgMain" 

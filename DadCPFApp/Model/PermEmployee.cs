@@ -7,6 +7,7 @@ using DadCPFApp.BizRules;
 
 namespace DadCPFApp.Model
 {
+    [Serializable]
     public class PermEmployee :Employee, VisitorEmployee
     {
         //private double _employerCPF = 0.0;
