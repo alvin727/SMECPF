@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DadCPFApp.Model
 {
-    public abstract class Employee : ObservableObject
+    public class Employee : ObservableObject
     {
         string name;
         string icNo;
@@ -18,7 +18,16 @@ namespace DadCPFApp.Model
         protected float _displayEmployerCPF;
         protected float _displayTotalCPF;
         int sn;
-        
+
+        public Employee()
+        {
+            this.name = "";
+            this.dob = DateTime.Now;
+            this.ordinaryWage = -1;
+            this.displayWage = 0;
+            this.icNo = "UNK";
+        }
+
         public Employee(string s, DateTime dob, long wage, string ic) 
         {
             this.name = s;

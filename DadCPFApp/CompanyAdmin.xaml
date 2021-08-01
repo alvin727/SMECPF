@@ -10,6 +10,7 @@
         <StackPanel Orientation="Horizontal">
             <Button  x:Name="btnAddCo">Add Company</Button>
             <Button x:Name="btnDelCo">Deactivate Company</Button>
+            <Button x:Name="btnSave" Command="{Binding SaveCOs}">Save All</Button>
         </StackPanel>
         <StackPanel>
             <Label>Company Administration</Label>
